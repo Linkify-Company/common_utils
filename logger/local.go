@@ -12,7 +12,7 @@ func (l *local) Info(err errify.IError) {
 }
 
 func (l *local) Infof(format string, args ...interface{}) {
-	color.Green(format, args...)
+	color.Green("\n"+format, args...)
 }
 
 func (l *local) Error(err errify.IError) {
@@ -20,7 +20,7 @@ func (l *local) Error(err errify.IError) {
 }
 
 func (l *local) Errorf(format string, args ...interface{}) {
-	color.Red(format, args...)
+	color.Red("\n"+format, args...)
 }
 
 func (l *local) Warn(err errify.IError) {
@@ -28,7 +28,7 @@ func (l *local) Warn(err errify.IError) {
 }
 
 func (l *local) Warnf(format string, args ...interface{}) {
-	color.HiYellow(format, args...)
+	color.HiYellow("\n"+format, args...)
 }
 
 func (l *local) Debug(err errify.IError) {
@@ -36,5 +36,5 @@ func (l *local) Debug(err errify.IError) {
 }
 
 func (l *local) Debugf(format string, args ...interface{}) {
-	color.Cyan(format, args...)
+	color.Cyan("\n"+format, args...)
 }

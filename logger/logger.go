@@ -52,6 +52,6 @@ func GetLogger(env string) Logger {
 }
 
 func format(err errify.IError) string {
-	return fmt.Sprintf("{\n  Error: %s\n  Location: %s\n  Message: %s\n  Details: %s\n  Read: %s\n}\n\n",
+	return fmt.Sprintf("\n{\n  Error: %s\n  Location: %s\n  Message: %s\n  Details: %s\n  Read: %s\n}\n\n",
 		err.Error(), err.Location(), err.Message(), err.Details(), err.Read())
 }
