@@ -50,7 +50,7 @@ func sendError(err errify.IError) SendError {
 func Ok(w http.ResponseWriter, send Send, log logger.Logger) {
 	w.Header().Set("Content-Type", "application/json")
 
-	jsonBytes, err := json.Marshal(send)
+	jsonBytes, err := json.MarshalIndent(send, "", "  ")
 	if err != nil {
 		log.Error(errify.NewInternalServerError(err.Error(), "Ok/MarshalIndent"))
 		return
