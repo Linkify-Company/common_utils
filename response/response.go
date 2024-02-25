@@ -2,7 +2,6 @@ package response
 
 import (
 	"encoding/json"
-	"fmt"
 	"github.com/Linkify-Company/common_utils/errify"
 	"github.com/Linkify-Company/common_utils/logger"
 	"net/http"
@@ -57,7 +56,7 @@ func Ok(w http.ResponseWriter, send Send, log logger.Logger) {
 		return
 	}
 
-	log.Infof(fmt.Sprintln(jsonBytes))
+	log.Debugf(string(jsonBytes))
 
 	w.WriteHeader(send.code)
 	_, err = w.Write(jsonBytes)
