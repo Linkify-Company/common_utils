@@ -24,11 +24,11 @@ func (l *local) Errorf(format string, args ...interface{}) {
 }
 
 func (l *local) Warn(err errify.IError) {
-	color.Blue(format(err))
+	color.HiYellow(format(err))
 }
 
 func (l *local) Warnf(format string, args ...interface{}) {
-	color.Blue(format, args...)
+	color.HiYellow(format, args...)
 }
 
 func (l *local) Debug(err errify.IError) {
