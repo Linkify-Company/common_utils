@@ -30,6 +30,9 @@ type Logger interface {
 
 	Debug(err errify.IError)
 	Debugf(format string, args ...interface{})
+
+	Panic(err errify.IError)
+	Panicf(format string, args ...interface{})
 }
 
 func GetLogger(env string) Logger {
