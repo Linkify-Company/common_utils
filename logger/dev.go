@@ -1,6 +1,7 @@
 package logger
 
 import (
+	"fmt"
 	"github.com/Linkify-Company/common_utils/errify"
 	"log/slog"
 )
@@ -39,4 +40,12 @@ func (d *dev) Debug(err errify.IError) {
 
 func (d *dev) Debugf(format string, args ...interface{}) {
 	d.logger.Debug(format, args...)
+}
+
+func (d *dev) Panic(err errify.IError) {
+	panic(format(err))
+}
+
+func (d *dev) Panicf(format string, args ...interface{}) {
+	panic(fmt.Sprintf(format, args...))
 }

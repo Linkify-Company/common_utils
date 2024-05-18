@@ -1,6 +1,7 @@
 package logger
 
 import (
+	"fmt"
 	"github.com/Linkify-Company/common_utils/errify"
 	"github.com/fatih/color"
 )
@@ -37,4 +38,12 @@ func (l *local) Debug(err errify.IError) {
 
 func (l *local) Debugf(format string, args ...interface{}) {
 	color.Cyan("\n"+format, args...)
+}
+
+func (l *local) Panic(err errify.IError) {
+	panic(format(err))
+}
+
+func (l *local) Panicf(format string, args ...interface{}) {
+	panic(fmt.Sprintf(format, args...))
 }
